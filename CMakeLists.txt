@@ -14,17 +14,17 @@ else()
 	add_definitions(-DWINDOWS)
 endif()
 
-if(NOT SOCKET_CPP_BUILD_WITHOUT_SECURE_CLASSES)
-    add_definitions(-DOPENSSL)
-endif()
+# if(NOT SOCKET_CPP_BUILD_WITHOUT_SECURE_CLASSES)
+#     add_definitions(-DOPENSSL)
+# endif()
 
 include_directories(Socket)
 
 add_subdirectory(Socket)
-add_subdirectory(SocketTest)
+# add_subdirectory(SocketTest)
 
-include(CTest)
-enable_testing ()
+# include(CTest)
+# enable_testing ()
 
 # test if the test INI file exist, otherwise default it to the one in SocketTest folder
 IF (NOT TEST_INI_FILE)
@@ -33,4 +33,4 @@ IF (NOT TEST_INI_FILE)
     Defaulting TEST_INI_FILE to ./SocketTest/template_test_conf.ini")
 ENDIF()
 
-add_test (NAME MyTest COMMAND test_socket ${TEST_INI_FILE})
+# add_test (NAME MyTest COMMAND test_socket ${TEST_INI_FILE})
